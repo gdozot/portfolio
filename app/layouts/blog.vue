@@ -1,5 +1,5 @@
 <template>
-        <div>
+    <div>
         <p>another layout</p>
         <slot />
     </div>
