@@ -25,6 +25,8 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
+
 interface RepositoryItem {
     id: number,
     html_url: string,
@@ -33,7 +35,7 @@ interface RepositoryItem {
     stargazers_count: number
 }
 
-const { data, error, pending } = await useFetch('https://api.github.com/users/gdozot/repos');
+const { data, error, pending } = await useFetch(`https://api.github.com/users/${config.public.githubUser}/repos`);
 
 const repositories = computed(() => (data.value as Array<RepositoryItem>).filter(repo => repo.description).sort((a, b) => b.stargazers_count - a.stargazers_count));
 </script>

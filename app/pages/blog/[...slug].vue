@@ -1,7 +1,7 @@
 <template>
-    <div class="prose dark:prose-invert">
+    <article class="prose dark:prose-invert">
         <ContentRenderer v-if="page" :value="page" />
-    </div>
+    </article>
 </template>
 
 <script setup lang="ts">
